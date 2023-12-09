@@ -1,8 +1,7 @@
 import axios from "axios";
-import config from "./Config";
 
 const AxiosInstance = axios.create({
-    baseURL: ``,
+    baseURL: `https://api.ai.barku.re`,
     timeout: 30000,
 });
 

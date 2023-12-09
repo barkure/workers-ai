@@ -1,7 +1,6 @@
 {
   "name": "workers-ai",
   "version": "0.1.0",
-  "proxy": "https://api.ai.barku.re",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
