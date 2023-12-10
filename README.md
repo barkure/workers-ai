@@ -20,7 +20,7 @@
 2. 你需要输入一个仓库名，例如：Workers-AI，点击 `Create`，等待一两分钟，构建完成后，点击`Continue to Dashboard`
 
 3. 依次点击`Settings`--->`Environment Variables`. 
-添加下面两个环境变量（请根据自己在[准备工作](https://github.com/barkure/workers-ai?tab=readme-ov-file#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C)中获得的`ACCOUNT_ID`和`Token`进行修改）：
+添加下面两个环境变量（请根据自己的`ACCOUNT_ID`和`Token`进行修改）：
 ```
 REACT_APP_ACCOUNT_ID='abcdef'
 REACT_APP_API_TOKEN='123456'
