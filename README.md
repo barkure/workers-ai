@@ -21,7 +21,7 @@ https://github.com/barkure/workers-ai.git
 npm install
 npm run build
 ```
-运行结束后，根目录会出现一个`build`文件夹，这是后面需要用到的.
+运行结束后，根目录会出现一个`build`文件夹，上传此文件夹下的所有文件和目录至你的网站根目录.
 注意：此处假设你的电脑已经安装了 [**Node.js**](https://nodejs.org/).
 
 ## 配置API反代
