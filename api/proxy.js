@@ -2,7 +2,6 @@ const axios = require('axios');
 
 module.exports = async (req, res) => {
   try {
-    // 获取请求的 URL，并去掉 "/api/proxy"
     const path = req.url.replace('/api/proxy', '');
 
     const response = await axios({
