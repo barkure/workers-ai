@@ -65,7 +65,4 @@ npm run build
 
 完成
 # 截图预览
-![文本生成](./screenshots/6E83F9309612BD2332680C42D85050CB.jpg)
-![文本翻译](./screenshots/E34F06EAE8B79AB9716ADAB3622BA8D4.jpg)
-![图像分类](./screenshots/162AE17E72620D0AC1E794DE8D9859A3.jpg)
-![文本生图](./screenshots/85FF6834274BCAE6C0AA92179F6255C6.jpg)
+![截图](./screenshots/2023-12-10%20231250.png)
