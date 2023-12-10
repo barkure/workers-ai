@@ -8,7 +8,6 @@
 # 部署方法
 ### 准备工作
 1. 登陆Cloudflare后访问[https://dash.cloudflare.com/](https://dash.cloudflare.com/)，地址栏会出现`https://dash.cloudflare.com/xxxxxxxxx`，`xxxxxxxxx`即是你的`{ACCOUNT_ID}`，复制保存.
-[![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/barkure/workers-ai)
 
 2. 访问Cloudflare的[API Tokens](https://dash.cloudflare.com/profile/api-tokens)，依次点击`Create Token`--->`Workers AI (Beta) Use template`--->`Continue to summary`--->`Create Token`.
 
