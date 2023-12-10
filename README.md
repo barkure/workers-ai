@@ -10,7 +10,6 @@
 1. 登陆Cloudflare后访问 [https://dash.cloudflare.com](https://dash.cloudflare.com/)，地址栏会出现`https://dash.cloudflare.com/xxxxxxxxx`，`xxxxxxxxx`即是你的`{ACCOUNT_ID}`，复制保存.
 
 2. 访问Cloudflare的 [API Tokens](https://dash.cloudflare.com/profile/api-tokens)，依次点击 `Create Token`--->`Workers AI (Beta) Use template`--->`Continue to summary`--->`Create Token`.
-
 **请保存好生成的Token**
 
 ### Vercel Deploy 部署
@@ -21,12 +20,11 @@
 2. 你需要输入一个仓库名，例如：Workers-AI，点击 `Create`，等待一两分钟，构建完成后，点击`Continue to Dashboard`.
 
 3. 依次点击`Settings`--->`Environment Variables`. 
-添加下面两个环境变量：
+添加下面两个环境变量（它们分别是[准备工作](https://github.com/barkure/workers-ai?tab=readme-ov-file#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C)中的`ACCOUNT_ID`和`Token`）：
 ```
 REACT_APP_ACCOUNT_ID='abcdef'
 REACT_APP_API_TOKEN='123456'
 ```
-它们分别是[准备工作](https://github.com/barkure/workers-ai?tab=readme-ov-file#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C)中的`ACCOUNT_ID`和`Token`.
 
 4. 环境变量添加后，点击`Deployments`，然后`Redeploy`，重新部署.
 
