@@ -16,9 +16,9 @@ const TextGeneration = () => {
             { role: 'user', content: value }
         ];
         setLoading(true); // 在请求开始时，将loading设置为true
+        setValue(''); // 清空输入框
         AxiosInstance.post(`/${model}`, { messages })
             .then((res) => {
-                setValue(''); // 清空输入框
                 setGeneratedText(prevTexts => [...prevTexts, { role: 'You', content: value }, { role: 'AI', content: res.data.result.response }]);
             })
             .catch((err) => {
