@@ -13,7 +13,7 @@
 
 **请保存好生成的Token**
 
-## Vercel Deploy 部署
+### Vercel Deploy 部署
 [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/barkure/workers-ai)
 
 1. 点击上面的图标
