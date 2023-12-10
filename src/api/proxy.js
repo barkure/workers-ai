@@ -8,6 +8,7 @@ module.exports = async (req, res) => {
       headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_API_TOKEN}`,
       },
+      data: req.body,
     });
     res.status(200).json(response.data);
   } catch (error) {
