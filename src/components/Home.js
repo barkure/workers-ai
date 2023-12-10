@@ -19,9 +19,9 @@ const Home = () => {
     case '/text-generation':
       activeKey = '1';
       break;
-    case '/speech-recognition':
-      activeKey = '2';
-      break;
+    // case '/speech-recognition':
+    //   activeKey = '2';
+    //   break;
     case '/text-translation':
       activeKey = '3';
       break;
@@ -41,9 +41,9 @@ const Home = () => {
       case '1':
         navigate('/text-generation');
         break;
-      case '2':
-        navigate('/speech-recognition');
-        break;
+      // case '2':
+      //   navigate('/speech-recognition');
+      //   break;
       case '3':
         navigate('/text-translation');
         break;
@@ -67,7 +67,7 @@ const Home = () => {
         <div>
           <CapsuleTabs activeKey={activeKey} onChange={handleTabClick}>
             <CapsuleTabs.Tab title='文本生成' key='1' />
-            <CapsuleTabs.Tab title='语音识别' key='2' />
+            {/* <CapsuleTabs.Tab title='语音识别' key='2' /> */}
             <CapsuleTabs.Tab title='文本翻译' key='3' />
             <CapsuleTabs.Tab title='图像分类' key='4' />
             <CapsuleTabs.Tab title='文本生图' key='5' />

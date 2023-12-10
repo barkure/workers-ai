@@ -10,6 +10,8 @@
     "antd-mobile": "^5.33.0",
     "antd-mobile-icons": "^0.3.0",
     "axios": "^1.6.2",
+    "bizcharts": "^4.1.23",
+    "echarts": "^5.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",

@@ -34,7 +34,7 @@ const TranslationPage = () => {
   };
 
   return (
-    <div style={{ display: "flow", marginTop: "15%" }}>
+    <div style={{ display: "flow", marginTop: "10%" }}>
       <div style={{ marginTop: "10%", width: "90%", margin: "0 auto" }}>
         <TextArea
           value={text}

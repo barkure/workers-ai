@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import AxiosInstance from "../AxiosInstance";
-import { Input, Button, Avatar } from "antd";
+import { Input, Button, Avatar, Spin } from "antd";
 import { ArrowUpOutlined } from "@ant-design/icons";
 
 const TextGeneration = () => {
@@ -8,13 +8,14 @@ const TextGeneration = () => {
     const [generatedText, setGeneratedText] = useState([]);
     const model = '@cf/meta/llama-2-7b-chat-int8';
     const messagesEndRef = useRef(null);
+    const [loading, setLoading] = useState(false); // 新增状态变量
 
     const handleButtonClick = () => {
         const messages = [
             { role: 'system', content: 'You are a friendly assistant' },
             { role: 'user', content: value }
         ];
-
+        setLoading(true); // 在请求开始时，将loading设置为true
         AxiosInstance.post(`/${model}`, { messages })
             .then((res) => {
                 setValue(''); // 清空输入框
@@ -22,6 +23,9 @@ const TextGeneration = () => {
             })
             .catch((err) => {
                 console.log(err);
+            })
+            .finally(() => {
+                setLoading(false); // 在请求结束时，将loading设置为false
             });
     };
 
@@ -46,7 +50,14 @@ const TextGeneration = () => {
             </div>
             <div style={{ display: "flex", alignItems: "center", position: 'fixed', bottom: 0, width: '100%', backgroundColor: "#fff", zIndex: 1000 }}>
                 <Input style={{ marginLeft: "20px" }} size="large" placeholder="发起对话...（对中文支持不好）" value={value} onChange={e => setValue(e.target.value)} onPressEnter={handleButtonClick} />
-                <Button style={{ margin: "20px" }} type="primary" shape="circle" icon={<ArrowUpOutlined />} onClick={handleButtonClick} />
+                <Button
+                    style={{ margin: "20px" }}
+                    type="primary"
+                    shape="circle"
+                    icon={<ArrowUpOutlined />}
+                    onClick={handleButtonClick}
+                    loading={loading} // 当loading为true时，按钮显示加载指示器并被禁用
+                />
             </div>
         </div>
     );
