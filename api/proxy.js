@@ -11,6 +11,7 @@ module.exports = async (req, res) => {
         'Authorization': `Bearer ${process.env.REACT_APP_API_TOKEN}`,
       },
       data: req.body,
+      timeout: 30000,
     });
 
     res.status(200).json(response.data);
