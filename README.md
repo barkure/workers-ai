@@ -7,17 +7,19 @@
 - 文本生图（@cf/stabilityai/stable-diffusion-xl-base-1.0）
 # 部署方法
 ### 准备工作
-1. 登陆Cloudflare后访问[https://dash.cloudflare.com/](https://dash.cloudflare.com/)，地址栏会出现`https://dash.cloudflare.com/xxxxxxxxx`，`xxxxxxxxx`即是你的`{ACCOUNT_ID}`，复制保存.
+1. 登陆Cloudflare后访问 [https://dash.cloudflare.com](https://dash.cloudflare.com/)，地址栏会出现`https://dash.cloudflare.com/xxxxxxxxx`，`xxxxxxxxx`即是你的`{ACCOUNT_ID}`，复制保存.
 
-2. 访问Cloudflare的[API Tokens](https://dash.cloudflare.com/profile/api-tokens)，依次点击`Create Token`--->`Workers AI (Beta) Use template`--->`Continue to summary`--->`Create Token`.
+2. 访问Cloudflare的 [API Tokens](https://dash.cloudflare.com/profile/api-tokens)，依次点击 `Create Token`--->`Workers AI (Beta) Use template`--->`Continue to summary`--->`Create Token`.
 
 **请保存好生成的Token**
 
 ## Vercel Deploy 部署
 1. 点击下面的图标
+
 [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/barkure/workers-ai)
 2. 你需要输入一个仓库名，例如：Workers-AI，点击 `Create`，等待一两分钟，构建完成后，点击`Continue to Dashboard`.
-3. 依次点击`Settings`--->`Environment Variables`. 添加下面两个环境变量：
+3. 依次点击`Settings`--->`Environment Variables`. 
+添加下面两个环境变量：
 ```
 REACT_APP_ACCOUNT_ID='abcdef'
 REACT_APP_API_TOKEN='123456'
