@@ -13,8 +13,9 @@
 **请保存好生成的Token**
 
 ## 使用 Vercel Deploy 部署
+1. 点击下面的 Deploy 图标 
 
-1. 点击此图标 [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/barkure/workers-ai)
+[![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/barkure/workers-ai)
 
 2. 你需要输入一个仓库名，例如：Workers-AI，点击 `Create`，等待一两分钟，构建完成后，点击`Continue to Dashboard`
 
