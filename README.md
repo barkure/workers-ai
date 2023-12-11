@@ -6,13 +6,13 @@
 - 图像分类（@cf/microsoft/resnet-50）
 - 文本生图（@cf/stabilityai/stable-diffusion-xl-base-1.0）
 # 部署方法
-### 准备工作
+## 准备工作
 1. 登陆Cloudflare后访问 [https://dash.cloudflare.com](https://dash.cloudflare.com/)，地址栏会出现`https://dash.cloudflare.com/xxxxxxxxx`，`xxxxxxxxx`即是你的`{ACCOUNT_ID}`，复制保存
 
 2. 访问Cloudflare的 [API Tokens](https://dash.cloudflare.com/profile/api-tokens)，依次点击 `Create Token`--->`Workers AI (Beta) Use template`--->`Continue to summary`--->`Create Token`
 **请保存好生成的Token**
 
-### 使用 Vercel Deploy 部署
+## 使用 Vercel Deploy 部署
 
 [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/barkure/workers-ai)
 
@@ -38,8 +38,8 @@ REACT_APP_API_TOKEN='123456'
 一个可行的解决办法：你可以自行反代 Cloudflare Workers AI 的 API，然后 Fork 本项目，修改 `src\components\AxiosInstance.js` 中的baseURL 为反代后的地址。然后使用 Vercel 部署或者自行使用服务器部署前端网站
 
 反代方法可参考下面的**反代 Cloudflare Workers AI API**
-### 使用 Nginx 部署
-#### 反代 Cloudflare Workers AI API
+## 使用 Nginx 部署
+### 反代 Cloudflare Workers AI API
 你可能需要对 Nginx 的配置有所了解，在你的 Nginx 配置中插入如下配置：
 ```nginx
     add_header 'Access-Control-Allow-Headers' 'Origin,X-Requested-With,Content-Type,Accept,Authorization,token' always;
@@ -59,7 +59,7 @@ REACT_APP_API_TOKEN='123456'
 		 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 	}
 ```
-#### 部署前端网站
+### 部署前端网站
 首先，你需要从GitHub上拉取这个仓库。你可以使用以下命令（亦或是下载本仓库）：
 
 ```bash
