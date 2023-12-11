@@ -12,7 +12,8 @@
 2. 访问Cloudflare的 [API Tokens](https://dash.cloudflare.com/profile/api-tokens)，依次点击 `Create Token`--->`Workers AI (Beta) Use template`--->`Continue to summary`--->`Create Token`
 **请保存好生成的Token**
 
-### Vercel Deploy 部署
+### 使用 Vercel Deploy 部署
+
 [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/barkure/workers-ai)
 
 1. 点击上面的图标
@@ -30,6 +31,56 @@ REACT_APP_API_TOKEN='123456'
 
 5. 等待两分钟，部署完成，就可以使用了
 
-如需自定义域名，请自行研究
+如需自定义域名，请自行研究。
+
+⚠ **由于Vercel对单个请求的时长有限制（10s），而画图需要二十至三十秒，因此此种方法部署的*文本转图*功能无法使用**
+
+一个可行的解决办法：你可以自行反代 Cloudflare Workers AI 的 API，然后 Fork 本项目，修改 `src\components\AxiosInstance.js` 中的baseURL 为反代后的地址。然后使用 Vercel 部署或者自行使用服务器部署前端网站
+
+反代方法可参考下面的**“使用 Nginx 部署”**
+### 使用 Nginx 部署
+#### 反代 Cloudflare Workers AI API
+你可能需要对 Nginx 的配置有所了解，在你的 Nginx 配置中插入如下配置：
+```nginx
+    add_header 'Access-Control-Allow-Headers' 'Origin,X-Requested-With,Content-Type,Accept,Authorization,token' always;
+    add_header 'Access-Control-Allow-Origin' 'https://ai.barku.re';
+    # 修改为你的前端网站地址
+    if ($request_method = 'OPTIONS') {
+    	return 204;
+    }
+  
+     location / {
+		 proxy_pass  https://api.cloudflare.com/client/v4/accounts/abcdef/ai/run/;
+         # 请替换 abcdef 为你的 ACCOUNT_ID
+		 proxy_set_header Host $proxy_host; # 
+		 proxy_set_header X-Real-IP $remote_addr;
+		 proxy_set_header Authorization 'Bearer 123456';
+         # 请替换 123456 为你的 Token
+		 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	}
+```
+#### 部署前端网站
+首先，你需要从GitHub上拉取这个仓库。你可以使用以下命令（亦或是下载本仓库）：
+
+```bash
+git clone https://github.com/barkure/workers-ai.git
+```
+然后打开项目，修改相关的配置：
+1. 打开 `src\components\config.js`，将第 5 行的`Backend_baseURL`修改为自己的后端地址，示例如下：
+```javascript
+const AxiosInstance = axios.create({
+    baseURL: `https://api.ai.barku.re`,
+    timeout: 30000,
+});
+```
+
+2. 在项目的根目录，即`white-dove-frontend\`目录下，运行如下命令（分两次）：
+```bash
+npm install
+npm run build
+```
+运行结束后，根目录会出现一个`build`文件夹，上传这个目录下的所有目录和文件到站点根目录，部署完成
+
+注意：此处假设你的电脑已经安装了 [**Node.js**](https://nodejs.org/).
 # 截图预览
 ![截图](./screenshots/2023-12-10%20231250.png)
