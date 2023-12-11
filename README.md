@@ -66,7 +66,7 @@ REACT_APP_API_TOKEN='123456'
 git clone https://github.com/barkure/workers-ai.git
 ```
 然后打开项目，修改相关的配置：
-1. 打开 `src\components\config.js`，将第 5 行的`Backend_baseURL`修改为自己的后端地址，示例如下：
+1. 打开 `src\components\AxiosInstance.js`，将第 4 行的`baseURL`修改为自己的后端地址，示例如下：
 ```javascript
 const AxiosInstance = axios.create({
     baseURL: `https://api.ai.barku.re`,
