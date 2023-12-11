@@ -37,7 +37,7 @@ REACT_APP_API_TOKEN='123456'
 
 一个可行的解决办法：你可以自行反代 Cloudflare Workers AI 的 API，然后 Fork 本项目，修改 `src\components\AxiosInstance.js` 中的baseURL 为反代后的地址。然后使用 Vercel 部署或者自行使用服务器部署前端网站
 
-反代方法可参考下面的**“使用 Nginx 部署”**
+反代方法可参考下面的**反代 Cloudflare Workers AI API**
 ### 使用 Nginx 部署
 #### 反代 Cloudflare Workers AI API
 你可能需要对 Nginx 的配置有所了解，在你的 Nginx 配置中插入如下配置：
