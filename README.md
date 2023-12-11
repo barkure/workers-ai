@@ -75,7 +75,7 @@ const AxiosInstance = axios.create({
 });
 ```
 
-2. 在项目的根目录，即`white-dove-frontend\`目录下，运行如下命令（分两次）：
+2. 在项目的根目录，即`workers-ai\`目录下，运行如下命令（分两次）：
 ```bash
 npm install
 npm run build
