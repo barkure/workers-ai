@@ -33,7 +33,7 @@ REACT_APP_API_TOKEN='123456'
 
 如需自定义域名，请自行研究。
 
-⚠ **由于Vercel对单个请求的时长有限制（10s），而画图需要二十至三十秒，因此此种方法部署的*文本转图*功能无法使用**
+⚠ **由于Vercel对单个请求的时长有限制（10s），而画图需要二十至三十秒，因此此种方法部署的文本转图功能无法使用**
 
 一个可行的解决办法：你可以自行反代 Cloudflare Workers AI 的 API，然后 Fork 本项目，修改 `src\components\AxiosInstance.js` 中的baseURL 为反代后的地址。然后使用 Vercel 部署或者自行使用服务器部署前端网站
 
