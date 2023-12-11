@@ -60,7 +60,7 @@ REACT_APP_API_TOKEN='123456'
 		 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 	}
 ```
-### 部署前端网站
+### Nginx 服务器部署前端网站
 首先，你需要从GitHub上拉取这个仓库。你可以使用以下命令（亦或是下载本仓库）：
 
 ```bash
