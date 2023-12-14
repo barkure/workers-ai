@@ -31,6 +31,9 @@ const Home = () => {
     case '/text-to-image':
       activeKey = '5';
       break;
+    case '/about':
+      activeKey = '6';
+      break;
     default:
       activeKey = '1';
       break;
@@ -53,6 +56,9 @@ const Home = () => {
       case '5':
         navigate('/text-to-image');
         break;
+      case '6':
+        navigate('/about');
+        break;
       default:
         break;
     }
@@ -71,6 +77,7 @@ const Home = () => {
             <CapsuleTabs.Tab title='文本翻译' key='3' />
             <CapsuleTabs.Tab title='图像分类' key='4' />
             <CapsuleTabs.Tab title='文本生图' key='5' />
+            <CapsuleTabs.Tab title='关于' key='6' />
           </CapsuleTabs>
         </div>
       </div>

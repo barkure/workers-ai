@@ -7,6 +7,7 @@ import AutomaticSpeechRecognition from './components/Models/AutomaticSpeechRecog
 import Translation from './components/Models/Translation'; // 导入TextTranslation组件
 import ImageClassification from './components/Models/ImageClassification'; // 导入ImageClassification组件
 import TextToImage from './components/Models/Text2Image'; // 导入TextToImage组件
+import About from './components/Models/About'; // 导入About组件
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -21,6 +22,7 @@ root.render(
           <Route path="text-translation" element={<Translation />} />
           <Route path="image-classification" element={<ImageClassification />} />
           <Route path="text-to-image" element={<TextToImage />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </Router>
