@@ -15,7 +15,7 @@ const About = () => {
             <div>
                 <h2>关于 Workers AI</h2>
             </div>
-            <div style={{ lineHeight: 2, fontWeight: 540, marginTop: "10%" }}>
+            <div style={{ lineHeight: 1.5, fontWeight: 540, marginTop: "7%" }}>
                 <p>
                     本站使用了<a href="https://developers.cloudflare.com/workers-ai/" target="_blank"> Cloudflare Workers AI </a>的 API，是一个基于人工智能的在线工具集合。目前支持如下功能：
                     <ul>
