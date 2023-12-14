@@ -40,7 +40,7 @@ const Text2Image = () => {
                 {imageUrl && <img src={imageUrl} alt="Generated" style={{ maxWidth: '90%', maxHeight: '90%' }} />}
             </div>
             <div>
-                <p style={{ textAlign: "center", marginTop: "25%" }}>图片生成较慢，一般需要等待10~30s</p>
+                <p style={{ textAlign: "center", marginTop: "15%" }}>图片生成较慢，一般需要等待10~30s</p>
                 <p style={{ textAlign: "center" }}>PS：英文关键词效果比较好</p>
             </div>
             <div style={{ display: "flex", alignItems: "center", position: 'fixed', bottom: 0, width: '100%', backgroundColor: "#fff", zIndex: 1000 }}>
